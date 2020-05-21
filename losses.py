@@ -227,4 +227,4 @@ b=np.array([[0.91,0.01,0.01,0.9],
                             [0.7,0.05,0.8,0.01]])
 
 
-print(L1_Loss(a,b))
+print(categorical_crossentropy(a,b))
