@@ -1,5 +1,4 @@
 import numpy as np 
-import tensorflow as tf
 
 
 def L1_Loss(y_true,y_pred):
@@ -218,10 +217,9 @@ def soft_dice_loss(y_true, y_pred, axis=(1,2,3),
 
 
 #test 
-a=tf.convert_to_tensor([[1,0,0,1],[1,0,1,0]],dtype=tf.float32)
-b=tf.convert_to_tensor([[0.91,0.01,0.01,0.9],
-                            [0.7,0.05,0.8,0.01]],dtype=tf.float32)
+a=np.array([[1,0,0,1],[1,0,1,0]])
+b=np.array([[0.91,0.01,0.01,0.9],
+                            [0.7,0.05,0.8,0.01]])
 
 
-print(tf.nn.l2_loss(a,b))
 print(L1_Loss(a,b))
