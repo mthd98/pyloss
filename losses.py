@@ -210,6 +210,7 @@ def soft_dice_loss(y_true, y_pred, axis=(1,2,3),
     return dice_loss
 
 
+
 def categorical_crossentropy(y_true, y_pred):
     # scale predictions so that the class probas of each sample sum to 1
     y_pred /= np.sum(y_pred, axis=-1, keepdims=True)
@@ -218,7 +219,7 @@ def categorical_crossentropy(y_true, y_pred):
     # calc
     loss = y_true * np.log(y_pred) 
     loss = -np.sum(loss, -1)
-    return loss
+    return np.abs(loss)
     
 
 #test 
