@@ -381,13 +381,3 @@ def yolo_v2_loss(y_true, y_pred,GRID_W,GRID_H,BATCH_SIZE,ANCHORS,BOX,COORD_SCALE
     loss = tf.Print(loss, [total_recall/seen], message='Average Recall \t', summarize=1000)
     
     return loss
-#test 
-a=tf.convert_to_tensor([[[1],[0],[0],[1]],[[1],[0],[1],[0]]],dtype=tf.float32)
-b=tf.convert_to_tensor([[[0.91],[0.01],[0.01],[0.9]],
-                            [[0.7],[0.05],[0.8],[0.01]]],dtype=tf.float32)
-
-
-    
-print(tf.losses.categorical_crossentropy(a,b))
-print(binary_crossentropy_weighted_loss(a,b,a))
-print(tf.losses.categorical_crossentropy(a,b)==categorical_crossentropy(a,b))
